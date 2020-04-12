@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 import javax.xml.transform.OutputKeys;
 import java.io.File;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class ActionsTest {
     WebDriver driver;
@@ -19,6 +20,8 @@ public class ActionsTest {
     public void openChrome(){
         System.setProperty("webdriver.chrome.driver","C:\\Users\\asus\\Desktop\\workplace\\selenium\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
+        //全局等待
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
     /**
     * 点击跳转并且校验链接的正确性
