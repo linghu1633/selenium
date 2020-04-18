@@ -1,5 +1,6 @@
-package com.qiang.day3;
+package com.qiang.day4;
 
+import com.zhao.page.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,34 +11,34 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest {
+import java.util.concurrent.TimeUnit;
+
+public class LoginTest2 {
     WebDriver driver;
     @BeforeMethod
     public void openChrome() throws InterruptedException{
         System.setProperty("webdriver.chrome.driver","C:\\Users\\asus\\Desktop\\workplace\\selenium\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
-/**        //全局等待
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);*/
+        //全局等待
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://mail.163.com/");
         driver.manage().window().maximize();
         Thread.sleep(1000);
     }
     @Test
-    public void loginSuccess() throws InterruptedException {
+    public void loginSuccessPO() throws InterruptedException {
         //点击密码登录
         driver.findElement(By.xpath("//*[@id=\"lbNormal\"]")).click();
         Thread.sleep(2000);
-/**
- * 几种定位frame的方法
- * driver.switch_to.frame(0)  # 1.用frame的index来定位，第一个是0
- * driver.switch_to.frame("frame1")  # 2.用id来定位
- * driver.switch_to.frame("myframe")  # 3.用name来定位
- * driver.switch_to.frame(driver.find_element_by_tag_name("iframe"))  # 4.用WebElement对象来定位
-*/
+
         driver.switchTo().frame(driver.findElement(By.tagName("iframe")));
-        driver.findElement(By.name("email")).sendKeys("linghu_1635");
-        driver.findElement(By.name("password")).sendKeys("linghuchong");
-        driver.findElement(By.id("dologin")).click();
+        //现将By.name("email")替换,运用到PO思想
+        //调用LoginPage.emailinput  这个PO思想的类中的方法
+        driver.findElement(LoginPage.emailinput).sendKeys("linghu_1635");
+
+        driver.findElement(LoginPage.passwordinput).sendKeys("linghuchong");
+
+        driver.findElement(LoginPage.dologinBotton).click();
         Thread.sleep(4000);
 
         //显示等待
@@ -62,7 +63,7 @@ public class LoginTest {
         driver.findElement(By.name("password")).sendKeys("linghuchong111");
         driver.findElement(By.id("dologin")).click();*/
         //调用封装方法
-        LoginTest.login(driver,"linghu_1635","linghuchong111");
+        LoginTest2.login(driver,"linghu_1635","linghuchong111");
         //显示等待
         WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"nerror\"]/div[2]")));

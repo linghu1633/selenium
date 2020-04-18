@@ -1,8 +1,7 @@
-package com.script;
+package com.qiang.day4;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
@@ -18,7 +17,6 @@ public class Dptestjava {
         driver =new ChromeDriver();
         driver.get("https://www.baidu.com/");
         //点击登录
-
         driver.findElement(By.name("tj_login")).click();
         //输入用户名
         driver.findElement(By.name("userName")).sendKeys(user);
