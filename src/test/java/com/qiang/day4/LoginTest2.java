@@ -35,9 +35,9 @@ public class LoginTest2 {
         //现将By.name("email")替换,运用到PO思想
         //调用LoginPage.emailinput  这个PO思想的类中的方法
         driver.findElement(LoginPage.emailinput).sendKeys("linghu_1635");
-
+        //调用LoginPage.emailinput  这个PO思想的类中的方法
         driver.findElement(LoginPage.passwordinput).sendKeys("linghuchong");
-
+        //调用LoginPage.emailinput  这个PO思想的类中的方法
         driver.findElement(LoginPage.dologinBotton).click();
         Thread.sleep(4000);
 
