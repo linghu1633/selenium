@@ -71,7 +71,6 @@ public class LoginTest2 {
         String error = driver.findElement(By.xpath("//*[@id=\"nerror\"]/div[2]")).getText();
         System.out.println(error);
         Assert.assertEquals(error,"请先进行验证");
-
     }
     //代码的封装 将点击密码登录输入值的栏位 封装成方法
     public static void login (WebDriver driver,String email,String pwd){
@@ -80,7 +79,6 @@ public class LoginTest2 {
         driver.findElement(By.name("password")).sendKeys(pwd);
         driver.findElement(By.id("dologin")).click();
     }
-
     @AfterMethod
     public void close(){
         driver.quit();
