@@ -1,0 +1,12 @@
+2020-04-28 14:41:10,745 [main] INFO  [com.TestLog4j] - 普通Info信息
+2020-04-28 14:41:10,745 [main] DEBUG [com.TestLog4j] - 调试debug信息
+2020-04-28 14:41:10,745 [main] ERROR [com.TestLog4j] - 报错error信息
+2020-04-28 14:41:10,745 [main] ERROR [com.TestLog4j] - 报错信息
+java.lang.IllegalArgumentException: 非法参数
+	at com.TestLog4j.main(TestLog4j.java:18)
+2020-04-29 21:29:10,595 [main] INFO  [com.TestLog4j] - 普通Info信息
+2020-04-29 21:29:10,596 [main] DEBUG [com.TestLog4j] - 调试debug信息
+2020-04-29 21:29:10,596 [main] ERROR [com.TestLog4j] - 报错error信息
+2020-04-29 21:29:10,597 [main] ERROR [com.TestLog4j] - 报错信息
+java.lang.IllegalArgumentException: 非法参数
+	at com.TestLog4j.main(TestLog4j.java:18)

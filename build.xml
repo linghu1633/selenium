@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="selenium" default="buildrun" basedir=".">
-    <property name="base.dir" value="."/>
-    <property name="buildrun.dir" value="."/>
-
-
-</project>

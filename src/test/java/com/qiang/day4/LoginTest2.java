@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 public class LoginTest2 {
-    WebDriver driver;
+    private WebDriver driver;
     @BeforeMethod
     public void openChrome() throws InterruptedException{
         System.setProperty("webdriver.chrome.driver","C:\\Users\\asus\\Desktop\\workplace\\selenium\\drivers\\chromedriver.exe");
@@ -63,7 +63,7 @@ public class LoginTest2 {
         driver.findElement(By.name("password")).sendKeys("linghuchong111");
         driver.findElement(By.id("dologin")).click();*/
         //调用封装方法
-        LoginTest2.login(driver,"linghu_1635","linghuchong111");
+        LoginTest2.login(driver,"linghu_1635","linghuchong");
         //显示等待
         WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"nerror\"]/div[2]")));

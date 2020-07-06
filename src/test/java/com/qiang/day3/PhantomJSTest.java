@@ -9,7 +9,7 @@ public class PhantomJSTest {
 
     @Test
     public void pjsTEst() throws InterruptedException {
-        System.setProperty("phantomjs.binary.path","C:\\Users\\asus\\Desktop\\workplace\\selenium\\drivers\\phantomjs.exe");
+        System.setProperty("phantomjs.binary.path","C:\\Users\\asus\\Desktop\\workplace\\java\\selenium\\drivers\\phantomjs.exe");
         WebDriver driver =new PhantomJSDriver();
 
         driver.get("https://cn.bing.com/");

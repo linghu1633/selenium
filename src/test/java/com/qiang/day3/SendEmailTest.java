@@ -22,7 +22,7 @@ public class SendEmailTest {
     WebDriver driver;
     @BeforeMethod
     public void openChrome() throws InterruptedException{
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\asus\\Desktop\\workplace\\selenium\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\asus\\Desktop\\workplace\\java\\selenium\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         //全局等待
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
